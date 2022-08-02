@@ -11,6 +11,6 @@ const reverseString = function(string) {
     return joinArray;
 };
 
- reverseString("hello");
+ reverseString("");
 // Do not edit below this line
 module.exports = reverseString;
