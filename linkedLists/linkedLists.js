@@ -1,40 +1,30 @@
-
 let linkedList2 = {
   value: ['John', 46],
   next: {
     value: ['Karl', 34],
-    next: {
-      value: ['Susan', 20],
-      next: null
-    }
+        next: null
+    
   }
 };
 
-console.log(linkedList2)
+// Create the new  node
+let karenNode = {
+  value: ['Karen', 14],
+  next: null
+};
+let susanNode = {
+  value: ['Susan', 20],
+  next: null
+};
 
 
-// now running using nodejs: 
+// Update the next pointer of the  node
+linkedList2.next.next = susanNode;
+linkedList2.next.next.next = karenNode;
+
+// Update the next pointer of the  node
+susanNode.next = linkedList2.next.next.next;
+karenNode.next = linkedList2.next.next.next.next;
 
 
-// const util = require('util');
-// let linkedList2 = {
-//   value: ['John', 46],
-//   next: {
-//     value: ['Karl', 34],
-//     next: {
-//       value: ['Susan', 20],
-//       next: null
-//     }
-//   }
-// };
-// console.log(util.inspect(linkedList2, { showHidden: false, depth: null }));
-// result: 
-
-// $ node linkedLists.js 
-// {
-//   value: [ 'John', 46 ],
-//   next: {
-//     value: [ 'Karl', 34 ],
-//     next: { value: [ 'Susan', 20 ], next: null }
-//   }
-// }
+console.log(linkedList2);
