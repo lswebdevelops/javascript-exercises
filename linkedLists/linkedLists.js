@@ -1,191 +1,157 @@
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
 
+  append(value) {
+    const newNode = new Node(value);
 
-function LinkedList() {
-  return {
-    head: null,
-
-    // Append new node at the end of the list with value(value)
-    append(value) {
-      // newNode object created with property data
-      let newNode = Node(value);
-
-      // when head = null, head will point to the newNode
-      // else find end of tail and update the tail's next pointer
-      if (this.head === null) {
-        this.head = newNode;
-      } else {
-        let tail = this.head;
-        while (tail.next !== null) {
-          tail = tail.next;
-        }
-        tail.next = newNode;
-      }
-    },
-
-    // Prepend new node at the beginning of the list with value(value)
-    prepend(value) {
-      // newNode object created with property data
-      let newNode = Node(value, this.head);
-
-      // previous pointer now points to newNode
+    if (this.tail) {
+      this.tail.nextNode = newNode;
+      this.tail = newNode;
+    } else {
       this.head = newNode;
-    },
+      this.tail = newNode;
+    }
 
-    // Return total number of nodes in the list
-    size() {
-      let count = 0;
-      let current = this.head;
-      while (current !== null) {
-        count += 1;
-        current = current.next;
+    this.length++;
+  }
+
+  prepend(value) {
+    const newNode = new Node(value);
+
+    if (this.head) {
+      newNode.nextNode = this.head;
+      this.head = newNode;
+    } else {
+      this.head = newNode;
+      this.tail = newNode;
+    }
+
+    this.length++;
+  }
+
+  size() {
+    return this.length;
+  }
+
+  head() {
+    return this.head;
+  }
+
+  tail() {
+    return this.tail;
+  }
+
+  at(index) {
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+
+    let currentNode = this.head;
+    let currentIndex = 0;
+
+    while (currentIndex < index) {
+      currentNode = currentNode.nextNode;
+      currentIndex++;
+    }
+
+    return currentNode;
+  }
+
+  pop() {
+    if (this.length === 0) {
+      return null;
+    }
+
+    let currentNode = this.head;
+    let previousNode = null;
+
+    while (currentNode.nextNode !== null) {
+      previousNode = currentNode;
+      currentNode = currentNode.nextNode;
+    }
+
+    if (previousNode === null) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      previousNode.nextNode = null;
+      this.tail = previousNode;
+    }
+
+    this.length--;
+
+    return currentNode.value;
+  }
+
+  contains(value) {
+    let currentNode = this.head;
+
+    while (currentNode !== null) {
+      if (currentNode.value === value) {
+        return true;
       }
-      console.log('size(): ', count);
-      return count;
-    },
 
-    // Return the first node in the list
-    findHead() {
-      console.log('findHead(): ', this.head.value)
-      return this.head.value;
-    },
+      currentNode = currentNode.nextNode;
+    }
 
-    // Return the last node in the list
-    tail() {
-      let tail = this.head;
-      while (tail.next) {
-        tail = tail.next;
+    return false;
+  }
+
+  find(value) {
+    let currentNode = this.head;
+    let currentIndex = 0;
+
+    while (currentNode !== null) {
+      if (currentNode.value === value) {
+        return currentIndex;
       }
-      console.log('tail(): ', tail.value);
-      return tail.next;
-    },
 
-    // Return the node at the given index
-    at(index) {
-      let i = 0;
-      let current = this.head;
-      if (index < 0) return;
-      while (i < index) {
-        i += 1;
-        if (current.next) {
-          current = current.next;
-        } else {
-          return console.error(`Out of range. Max value is ${this.size() - 1}`)
-        }
-      }
-      console.log(`at(${index}): `, current)
-      return current;
-    },
+      currentNode = currentNode.nextNode;
+      currentIndex++;
+    }
 
-    // Remove the last element from the list
-    pop() {
-      let current = this.head;
-      while (current.next.next) {
-        current = current.next;
-      }
-      current.next = null;
-      console.log('pop() :', current);
-      return current;
-    },
+    return null;
+  }
 
-    // Return true if the value is in the list and otherwise returns false
-    contains(value) {
-      let current = this.head;
-      while (current) {
-        if (current.value === value) {
-          console.log(`contains(${value}): `, true)
-          return true;
-        }
-        current = current.next;
-      }
-      console.log(`contains(${value}): `, false)
-      return false;
-    },
+  toString() {
+    let currentNode = this.head;
+    let string = "";
 
-    // Return the index of the node containing value, or null if not found
-    find(value) {
-      let current = this.head;
-      let i = 0;
-      while (current) {
-        if (current.value === value) {
-          console.log(`find(${value}): `, i);
-          return i;
-        }
-        i += 1;
-        current = current.next;
-      }
-      console.log(`find(${value}): `, null)
-      return null
-    },
+    while (currentNode !== null) {
+      string += `(${currentNode.value}) -> `;
+      currentNode = currentNode.nextNode;
+    }
 
-    // Print the linked list to the console
-    toString() {
-      let str = '';
-      let current = this.head;
-      while (current) {
-        if (!current.next) {
-          str += `(${current.value}) -> null`;
-        } else {
-          str += `(${current.value}) -> `;
-        }
-        current = current.next;
-      }
-      console.log('toString(): ', str)
-      return str;
-    },
+    string += "null";
 
-    // Insert new node with the provided value at the given index
-    insertAt(value, index) {
-      let current = this.head;
-      let i = 0;
-      while (current) {
-        if (i === index - 1) {
-          const newNode = Node(value, current.next);
-          current.next = newNode;
-        }
-        current = current.next;
-        i += 1;
-      }
-    },
-
-    // Remove the node at the given index
-    removeAt(index) {
-      let current = this.head;
-      let i = 0;
-      while (current) {
-        if (i === index - 1) {
-          current.next = current.next.next
-        }
-        i += 1;
-        current = current.next;
-      }
-    },
+    return string;
   }
 }
 
-function Node(value = null, nextNode = null) {
-  return {
-    value: value,
-    next: nextNode,
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.nextNode = null;
   }
 }
+const list = new LinkedList();
 
-const list = LinkedList();
+list.append(1);
 list.append(2);
-list.prepend(1);
-list.prepend(0);
 list.append(3);
-list.append(4);
-list.append(5);
-list.size();
-list.findHead();
-list.tail();
-list.at(1);
-list.pop();
-list.size();
-list.contains(4);
-list.find(4);
-list.toString();
-list.insertAt('insert', 3);
-list.toString();
-list.removeAt(4);
-list.toString();
+list.prepend(0);
+
+console.log(list.size()); // 4
+console.log(list.head.value); // 0
+console.log(list.tail.value); // 3
+console.log(list.at(2).value); // 2
+console.log(list.pop()); // 3
+console.log(list.contains(2)); // true
+console.log(list.find(2)); // 1
+console.log(list.toString()); // (0) -> (1) -> (2) -> null
+
+
