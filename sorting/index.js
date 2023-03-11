@@ -36,6 +36,15 @@ console.log(`Ascending sorted: ${ascendingSorting(arr)}`);;
 console.log(`Descending sorted: ${descendingSorting(arr)}`);;
 
 
+// now using a better tecnic 
+
+function sortingArray(list){
+    list.sort(function(a, b){
+        return a - b;
+    });
+    return list;
+}
 
 
+console.log(`Sorting array using a-b method: ${sortingArray(arr)}`);
 
