@@ -47,4 +47,3 @@ function sortingArray(list){
 
 
 console.log(`Sorting array using a-b method: ${sortingArray(arr)}`);
-
