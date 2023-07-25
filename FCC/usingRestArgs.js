@@ -21,3 +21,10 @@ function howManyArguments(...argument) {
 }
 
 console.log(howManyArguments("as", null, false, 2));
+
+
+const arr = [5, 89, 3, 45 ];
+
+const maximus = Math.max(...arr);
+console.log(maximus);
+
