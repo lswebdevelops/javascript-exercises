@@ -17,15 +17,21 @@ const result = {
   };
   function makeList(arr) {
     // Only change code below this line
-    const failureItems = arr.map(item =>`<li class="text-warning">${item}</li>`
+    const failureItems = arr.map(item =>
+        `<li class="text-warning">${item}</li>
+        <li class="text-warning">${item}</li>
+        <li class="text-warning">${item}</li>`
     )
     // Only change code above this line
   
-    return failureItems;
+    return {failureItems};
   }
   
   const failuresList = makeList(result.failure);
-console.log(failuresList);
+  const failuresList2 = makeList(result.success);
+  const failuresList3 = makeList(result.skipped);
+
+console.log(failuresList, failuresList2, failuresList3);
 
 // 0
 // : 
