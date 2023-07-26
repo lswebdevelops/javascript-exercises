@@ -283,7 +283,6 @@ console.log(shortHand.test(numbers));
 console.log(longHand.test(varNames));
 console.log(shortHand.test(varNames));
 
-console.clear();
 
 let quoteSample123 = "The five boxing wizards jump quickly.";
 let alphabetRegexV2 = /\w/g; // Change this line
@@ -291,9 +290,25 @@ let result123 = quoteSample123.match(alphabetRegexV2).length;
 console.log(result123); //31
 
 //Match Everything But Letters and Numbers with cappital W /\W/
-console.clear();
 let shortHand2 = /\W/;
 let numbers2 = "42%";
 let sentence = "Coding!";
-console.log(numbers2.match(shortHand2));
-console.log(sentence.match(shortHand2));
+console.log(numbers2.match(shortHand2));// %
+console.log(sentence.match(shortHand2)); // !
+
+let quoteSample1234 = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g; // Change this line
+let result1234 = quoteSample1234.match(nonAlphabetRegex).length;
+console.log(result1234); // 6
+
+/////////////////////////////
+
+console.clear();
+
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g; // Change this line
+let result321 = movieName.match(numRegex).length;
+console.log(result321); //4
+
+
+
