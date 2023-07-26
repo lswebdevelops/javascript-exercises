@@ -59,7 +59,6 @@ let ourStr = "Regular expressions";
 let ourRegex = /expressions/;
 ourStr.match(ourRegex);
 
-
 console.log("string".match(/regex/)); // null
 console.log(/regex/.test("string")); //false
 
@@ -79,5 +78,67 @@ let result12 = extractStr.match(codingRegex); // Change this line
 console.log(result12); //['coding', index: 18, input: "Extract the word 'coding' from this string.", groups: undefined]
 
 // Find More Than the First Match
+
+let testStr13 = "Repeat, Repeat, Repeat";
+let ourRegex13 = /Repeat/;
+testStr13.match(ourRegex13); //Here match would return ["Repeat"].
+
+
+let repeatRegex = /Repeat/g;
+console.log(testStr13.match(repeatRegex));//(3) ['Repeat', 'Repeat', 'Repeat']
+
+
+// Your regex starRegex should use the global flag g
+// Passed:Your regex starRegex should use the case insensitive flag i
+// Passed:Your match should match both occurrences of the word Twinkle
+// Passed:Your match result should have two elements in it.
+
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /Twinkle|twinkle/ig; // Change this line
+let result14 = twinkleStar.match(starRegex); // Change this line
 console.clear();
+
+console.log(result14); //(2) ['Twinkle', 'twinkle']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
