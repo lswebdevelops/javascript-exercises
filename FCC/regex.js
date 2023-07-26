@@ -239,7 +239,6 @@ let myRegex777 = /<[a-z0-9]*?>/; // Change this line
 let result777 = text.match(myRegex777);
 console.log(result777);
 
-
 // /*/*/*/*/
 // Match Beginning String Patterns
 // */*/*/*/ */*/
@@ -254,9 +253,20 @@ let rickyAndCal = "Cal and Ricky both like racing.";
 let calRegex = /^Cal/; // Change this line
 let result_1 = calRegex.test(rickyAndCal);
 console.log(result_1); //true
-
 console.clear();
 // /*/*/*/*/
+// Match Ending String Patterns /**$/
+let theEnding = "This is a never ending story";
+let storyRegex = / story$/;
+console.log(storyRegex.test(theEnding)); //true
+let noEnding = "Sometimes a story will have to end";
+console.log(storyRegex.test(noEnding)); //false
 
 
+
+let caboose = "The last car on a train is the caboose";
+let lastRegex = / caboose$/; // Change this line
+let result343434 = lastRegex.test(caboose);
+
+console.log(result343434);
 
