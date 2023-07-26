@@ -209,7 +209,6 @@ let myRegex66 = /s+/g; // Change this line
 let result66 = difficultSpelling.match(myRegex66);
 console.log(result66); // (2) ['ss', 'ss']
 
-console.clear();
 // /*/*/*/*/*/*/*/*/ */*/
 
 let soccerWord = "gooooooooal!";
@@ -221,9 +220,43 @@ console.log(gPhrase.match(goRegex));
 console.log(oPhrase.match(goRegex));
 
 // Only change code below this line
-let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!"
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
 let chewieRegex = /Aa*/; // Change this line
 // Only change code above this line
 
 let result1 = chewieQuote.match(chewieRegex);
-console.log(result1);// ['Aaaaaaaaaaaaaaaa', index: 0, input: 'Aaaaaaaaaaaaaaaarrrgh!', groups: undefined]
+console.log(result1); // ['Aaaaaaaaaaaaaaaa', index: 0, input: 'Aaaaaaaaaaaaaaaarrrgh!', groups: undefined]
+
+// /*/*/*/*/*/*/*/*/ */*/
+
+let titanic = "titanic";
+let regexT = /t[a-z]*i/;
+console.log(titanic.match(regexT)); // titani
+
+// ? character to change it to lazy matching.
+let text = "<h1>Winter is coming</h1>";
+let myRegex777 = /<[a-z0-9]*?>/; // Change this line
+let result777 = text.match(myRegex777);
+console.log(result777);
+
+
+// /*/*/*/*/
+// Match Beginning String Patterns
+// */*/*/*/ */*/
+
+let firstString = "Ricky is first and can be found.";
+let firstRegex = /^Ricky/;
+console.log(firstRegex.test(firstString)); //true
+let notFirst = "You can't find Ricky now.";
+console.log(firstRegex.test(notFirst)); // false
+
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result_1 = calRegex.test(rickyAndCal);
+console.log(result_1); //true
+
+console.clear();
+// /*/*/*/*/
+
+
+
