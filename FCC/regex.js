@@ -199,17 +199,25 @@ let quoteSample444 = "Blueberry 3.141592653s are delicious.";
 let myRegex444 = /[h-s2-6]/ig; // Change this line
 let result444 = quoteSample444.match(myRegex444); // Change this line
 console.log(result444); //(17) ['l', 'r', 'r', '3', '4', '5', '2', '6', '5', '3', 's', 'r', 'l', 'i', 'i', 'o', 's']
+;
+// /*/*/*/*/*/*/*/*/ */*/
+//called negated character sets. [^*]
+let quoteSample555 = "3 blind mice.";
+let myRegex555 = /[^aeiou0-9]/ig; // Change this line
+let result555 = quoteSample555.match(myRegex555); // Change this line
+
+console.log(result555); // [' ', 'b', 'l', 'n', 'd', ' ', 'm', 'c', '.']
 
 
 
+// /*/*/*/*/*/*/*/*/ */*/
 
+// matching double digits/letters with + 
 
-
-
-
-
-
-
+let difficultSpelling = "Mississippi";
+let myRegex66 = /s+/g; // Change this line
+let result66 = difficultSpelling.match(myRegex66);
+console.log(result66); // (2) ['ss', 'ss']
 
 
 
