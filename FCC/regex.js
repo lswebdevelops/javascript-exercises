@@ -96,26 +96,79 @@ console.log(testStr13.match(repeatRegex));//(3) ['Repeat', 'Repeat', 'Repeat']
 let twinkleStar = "Twinkle, twinkle, little star";
 let starRegex = /Twinkle|twinkle/ig; // Change this line
 let result14 = twinkleStar.match(starRegex); // Change this line
-console.clear();
 
 console.log(result14); //(2) ['Twinkle', 'twinkle']
 
 
+// /*/*/*/*/*/*/*/*/*/
+let humStr = "I'll hum a song";
+let hug_Str = "Bear hug";
+let huRegex = /hu./;// > . brings hu{anything here }
+console.log(huRegex.test(humStr));;//true
+console.log(huRegex.test(hug_Str));;//true
+
+
+// You should use the .test() method.
+// Waiting:You should use the wildcard character in your regex unRegex
+// Waiting:Your regex unRegex should match run in the string Let us go on a run.
+// Waiting:Your regex unRegex should match sun in the string The sun is out today.
+// Waiting:Your regex unRegex should match fun in the string Coding is a lot of fun.
+// Waiting:Your regex unRegex should match pun in the string Seven days without a pun makes one weak.
+// Waiting:Your regex unRegex should match nun in the string One takes a vow to be a nun.
+// Waiting:Your regex unRegex should match bun in the string She got fired from the hot dog stand for putting her hair in a bun.
+// Waiting:Your regex unRegex should not match the string There is a bug in my code.
+// Waiting:Your regex unRegex should not match the string Catch me if you can.
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un./; // Change this line
+let result_15 = unRegex.test(exampleStr);
+console.log(result_15);
+
+// /*/*/*/*/*/*/*/*/ */*/
+
+let bigStr = "big";
+let bagStr = "bag";
+let bugStr = "bug";
+let begStr = "beg"
+let bogStr = "bog";
+let bgRegex = /b[aiue]g/;
+console.log(bigStr.match(bgRegex));// ['big', index: 0, input: 'big', groups: undefined]
+console.log(bagStr.match(bgRegex));// regex.js:135 ['bag', index: 0, input: 'bag', groups: undefined]
+console.log(bugStr.match(bgRegex));// regex.js:136 ['bug', index: 0, input: 'bug', groups: undefined]
+console.log(bogStr.match(bgRegex));// null
+console.log(begStr.match(bgRegex));// ['beg', index: 0, input: 'beg', groups: undefined]
+
+
+/*
+You should find all 25 vowels.
+Waiting:Your regex vowelRegex should use a character class.
+Waiting:Your regex vowelRegex should use the global flag.
+Waiting:Your regex vowelRegex should use the case insensitive flag.
+Waiting:Your regex should not match any consonants.
+*/
+
+
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aeiou]/gi; // Change this line
+let result_16 = quoteSample.match(vowelRegex); // Change this line
+console.log(result_16);
 
 
 
+// /*/*/*/*/*/*/*/*/ */*/
+console.clear();
 
+let catStr = "cat";
+let batStr = "bat";
+let eatStr = "eat";
+let fatStr = "fat";
+let matStr = "mat";
+let natStr = "nat";
+let bgRegex11 = /[a-m]at/;// from a to m, so n to z are not included. 
 
-
-
-
-
-
-
-
-
-
-
+console.log(catStr.match(bgRegex11));// cat
+console.log(batStr.match(bgRegex11)); //bat
+console.log(matStr.match(bgRegex11));// mat
+console.log(natStr.match(bgRegex11));// null
 
 
 
