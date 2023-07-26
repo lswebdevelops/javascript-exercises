@@ -38,7 +38,6 @@ let result4 = waldoRegex.test(waldoIsHiding);
 console.log(result4);//true
 
 
-console.clear();
 /*
 Your regex petRegex should return true for the string John has a pet dog.
 Passed:Your regex petRegex should return false for the string Emma has a pet rock.
@@ -53,3 +52,16 @@ let petString = "James has a pet cat.";
 let petRegex = /cat|dog|fish|bird/; // Change this line
 let result5 = petRegex.test(petString);
 console.log(result5);//true
+
+
+// using ignore case
+let myString11 = "freeCodeCamp";
+let fccRegex = /freeCodeCamp|FreeCodeCamp|FreecodeCamp|FreeCodecamp/i; // Change this line
+let result11 = fccRegex.test(myString11);
+console.log(result11);// true
+
+console.clear();
+// .match() method.
+
+
+
