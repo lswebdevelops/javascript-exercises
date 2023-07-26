@@ -83,10 +83,8 @@ let testStr13 = "Repeat, Repeat, Repeat";
 let ourRegex13 = /Repeat/;
 testStr13.match(ourRegex13); //Here match would return ["Repeat"].
 
-
 let repeatRegex = /Repeat/g;
-console.log(testStr13.match(repeatRegex));//(3) ['Repeat', 'Repeat', 'Repeat']
-
+console.log(testStr13.match(repeatRegex)); //(3) ['Repeat', 'Repeat', 'Repeat']
 
 // Your regex starRegex should use the global flag g
 // Passed:Your regex starRegex should use the case insensitive flag i
@@ -94,19 +92,17 @@ console.log(testStr13.match(repeatRegex));//(3) ['Repeat', 'Repeat', 'Repeat']
 // Passed:Your match result should have two elements in it.
 
 let twinkleStar = "Twinkle, twinkle, little star";
-let starRegex = /Twinkle|twinkle/ig; // Change this line
+let starRegex = /Twinkle|twinkle/gi; // Change this line
 let result14 = twinkleStar.match(starRegex); // Change this line
 
 console.log(result14); //(2) ['Twinkle', 'twinkle']
 
-
 // /*/*/*/*/*/*/*/*/*/
 let humStr = "I'll hum a song";
 let hug_Str = "Bear hug";
-let huRegex = /hu./;// > . brings hu{anything here }
-console.log(huRegex.test(humStr));;//true
-console.log(huRegex.test(hug_Str));;//true
-
+let huRegex = /hu./; // > . brings hu{anything here }
+console.log(huRegex.test(humStr)); //true
+console.log(huRegex.test(hug_Str)); //true
 
 // You should use the .test() method.
 // Waiting:You should use the wildcard character in your regex unRegex
@@ -128,15 +124,14 @@ console.log(result_15);
 let bigStr = "big";
 let bagStr = "bag";
 let bugStr = "bug";
-let begStr = "beg"
+let begStr = "beg";
 let bogStr = "bog";
 let bgRegex = /b[aiue]g/;
-console.log(bigStr.match(bgRegex));// ['big', index: 0, input: 'big', groups: undefined]
-console.log(bagStr.match(bgRegex));// regex.js:135 ['bag', index: 0, input: 'bag', groups: undefined]
-console.log(bugStr.match(bgRegex));// regex.js:136 ['bug', index: 0, input: 'bug', groups: undefined]
-console.log(bogStr.match(bgRegex));// null
-console.log(begStr.match(bgRegex));// ['beg', index: 0, input: 'beg', groups: undefined]
-
+console.log(bigStr.match(bgRegex)); // ['big', index: 0, input: 'big', groups: undefined]
+console.log(bagStr.match(bgRegex)); // regex.js:135 ['bag', index: 0, input: 'bag', groups: undefined]
+console.log(bugStr.match(bgRegex)); // regex.js:136 ['bug', index: 0, input: 'bug', groups: undefined]
+console.log(bogStr.match(bgRegex)); // null
+console.log(begStr.match(bgRegex)); // ['beg', index: 0, input: 'beg', groups: undefined]
 
 /*
 You should find all 25 vowels.
@@ -146,13 +141,11 @@ Waiting:Your regex vowelRegex should use the case insensitive flag.
 Waiting:Your regex should not match any consonants.
 */
 
-
-let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let quoteSample =
+  "Beware of bugs in the above code; I have only proved it correct, not tried it.";
 let vowelRegex = /[aeiou]/gi; // Change this line
 let result_16 = quoteSample.match(vowelRegex); // Change this line
 console.log(result_16);
-
-
 
 // /*/*/*/*/*/*/*/*/ */*/
 
@@ -162,12 +155,12 @@ let eatStr = "eat";
 let fatStr = "fat";
 let matStr = "mat";
 let natStr = "nat";
-let bgRegex11 = /[a-m]at/;// from a to m, so n to z are not included. 
+let bgRegex11 = /[a-m]at/; // from a to m, so n to z are not included.
 
-console.log(catStr.match(bgRegex11));// cat
+console.log(catStr.match(bgRegex11)); // cat
 console.log(batStr.match(bgRegex11)); //bat
-console.log(matStr.match(bgRegex11));// mat
-console.log(natStr.match(bgRegex11));// null
+console.log(matStr.match(bgRegex11)); // mat
+console.log(natStr.match(bgRegex11)); // null
 
 /*
 Your regex alphabetRegex should match 35 items.
@@ -176,7 +169,7 @@ Waiting:Your regex alphabetRegex should use the case insensitive flag.
 */
 
 let quoteSample33 = "The quick brown fox jumps over the lazy dog.";
-let alphabetRegex = /[a-z]/ig; // Change this line
+let alphabetRegex = /[a-z]/gi; // Change this line
 let result33 = quoteSample33.match(alphabetRegex); // Change this line
 
 console.log(result33);
@@ -186,7 +179,7 @@ console.log(result33);
 // Match Numbers and Letters of the Alphabet
 
 let jennyStr = "Jenny8675309";
-let myRegex44 = /[a-z0-9]/ig;
+let myRegex44 = /[a-z0-9]/gi;
 console.log(jennyStr.match(myRegex44)); // (12) ['J', 'e', 'n', 'n', 'y', '8', '6', '7', '5', '3', '0', '9']
 
 // Create a single regex that matches a range of letters between h and s, and a range of numbers between 2 and 6. Remember to include the appropriate flags in the regex.
@@ -196,29 +189,41 @@ console.log(jennyStr.match(myRegex44)); // (12) ['J', 'e', 'n', 'n', 'y', '8', 
 console.clear();
 
 let quoteSample444 = "Blueberry 3.141592653s are delicious.";
-let myRegex444 = /[h-s2-6]/ig; // Change this line
+let myRegex444 = /[h-s2-6]/gi; // Change this line
 let result444 = quoteSample444.match(myRegex444); // Change this line
 console.log(result444); //(17) ['l', 'r', 'r', '3', '4', '5', '2', '6', '5', '3', 's', 'r', 'l', 'i', 'i', 'o', 's']
-;
 // /*/*/*/*/*/*/*/*/ */*/
 //called negated character sets. [^*]
 let quoteSample555 = "3 blind mice.";
-let myRegex555 = /[^aeiou0-9]/ig; // Change this line
+let myRegex555 = /[^aeiou0-9]/gi; // Change this line
 let result555 = quoteSample555.match(myRegex555); // Change this line
 
 console.log(result555); // [' ', 'b', 'l', 'n', 'd', ' ', 'm', 'c', '.']
 
-
-
 // /*/*/*/*/*/*/*/*/ */*/
 
-// matching double digits/letters with + 
+// matching double digits/letters with +
 
 let difficultSpelling = "Mississippi";
 let myRegex66 = /s+/g; // Change this line
 let result66 = difficultSpelling.match(myRegex66);
 console.log(result66); // (2) ['ss', 'ss']
 
+console.clear();
+// /*/*/*/*/*/*/*/*/ */*/
 
+let soccerWord = "gooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/;
+console.log(soccerWord.match(goRegex));
+console.log(gPhrase.match(goRegex));
+console.log(oPhrase.match(goRegex));
 
+// Only change code below this line
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!"
+let chewieRegex = /Aa*/; // Change this line
+// Only change code above this line
 
+let result1 = chewieQuote.match(chewieRegex);
+console.log(result1);// ['Aaaaaaaaaaaaaaaa', index: 0, input: 'Aaaaaaaaaaaaaaaarrrgh!', groups: undefined]
