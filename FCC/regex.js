@@ -303,7 +303,7 @@ console.log(result1234); // 6
 
 /////////////////////////////
 
-console.clear();
+
 
 let movieName = "2001: A Space Odyssey";
 let numRegex = /\d/g; // Change this line
@@ -318,3 +318,25 @@ let noNumRegex = /\D/g; // Change this line
 let result4321 = movieName2.match(noNumRegex).length;
 
 console.log(result4321);// 17
+
+//Restrict Possible Usernames
+
+console.clear();
+let username = "ghdfh555";
+let userCheck = /^[a-z][a-z]+\d*|^[a-z]\d\d+$/i; // Change this line
+let result8797 = userCheck.test(username);
+console.log(result8797);
+
+// Your regex should match the string JACK /// /\w+|\d+/g; 
+// Failed:Your regex should not match the string J
+// Failed:Your regex should match the string Jo
+// Failed:Your regex should match the string Oceans11
+// Failed:Your regex should match the string RegexGuru
+// Failed:Your regex should not match the string 007
+// Failed:Your regex should not match the string 9
+// Failed:Your regex should not match the string A1
+// Failed:Your regex should not match the string BadUs3rnam3
+// Failed:Your regex should match the string Z97
+// Failed:Your regex should not match the string c57bT3
+// Failed:Your regex should match the string AB1
+// Failed:Your regex should not match the string J%4
