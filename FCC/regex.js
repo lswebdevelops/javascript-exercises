@@ -155,7 +155,6 @@ console.log(result_16);
 
 
 // /*/*/*/*/*/*/*/*/ */*/
-console.clear();
 
 let catStr = "cat";
 let batStr = "bat";
@@ -170,16 +169,36 @@ console.log(batStr.match(bgRegex11)); //bat
 console.log(matStr.match(bgRegex11));// mat
 console.log(natStr.match(bgRegex11));// null
 
+/*
+Your regex alphabetRegex should match 35 items.
+Waiting:Your regex alphabetRegex should use the global flag.
+Waiting:Your regex alphabetRegex should use the case insensitive flag.
+*/
 
+let quoteSample33 = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/ig; // Change this line
+let result33 = quoteSample33.match(alphabetRegex); // Change this line
 
+console.log(result33);
 
+// /*/*/*/*/*/*/*/*/ */*/
 
+// Match Numbers and Letters of the Alphabet
 
+let jennyStr = "Jenny8675309";
+let myRegex44 = /[a-z0-9]/ig;
+console.log(jennyStr.match(myRegex44)); // (12) ['J', 'e', 'n', 'n', 'y', '8', '6', '7', '5', '3', '0', '9']
 
+// Create a single regex that matches a range of letters between h and s, and a range of numbers between 2 and 6. Remember to include the appropriate flags in the regex.
+// Your regex myRegex should match 17 items.
+// Passed:Your regex myRegex should use the global flag.
+// Passed:Your regex myRegex should use the case insensitive flag.
+console.clear();
 
-
-
-
+let quoteSample444 = "Blueberry 3.141592653s are delicious.";
+let myRegex444 = /[h-s2-6]/ig; // Change this line
+let result444 = quoteSample444.match(myRegex444); // Change this line
+console.log(result444); //(17) ['l', 'r', 'r', '3', '4', '5', '2', '6', '5', '3', 's', 'r', 'l', 'i', 'i', 'o', 's']
 
 
 
