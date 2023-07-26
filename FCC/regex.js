@@ -311,4 +311,10 @@ let result321 = movieName.match(numRegex).length;
 console.log(result321); //4
 
 
+// Match All Non-Numbers with /\D/
 
+let movieName2= "2001: A Space Odyssey";
+let noNumRegex = /\D/g; // Change this line
+let result4321 = movieName2.match(noNumRegex).length;
+
+console.log(result4321);// 17
