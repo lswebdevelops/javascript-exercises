@@ -253,8 +253,7 @@ let rickyAndCal = "Cal and Ricky both like racing.";
 let calRegex = /^Cal/; // Change this line
 let result_1 = calRegex.test(rickyAndCal);
 console.log(result_1); //true
-console.clear();
-// /*/*/*/*/
+
 // Match Ending String Patterns /**$/
 let theEnding = "This is a never ending story";
 let storyRegex = / story$/;
@@ -270,3 +269,31 @@ let result343434 = lastRegex.test(caboose);
 
 console.log(result343434);
 
+
+
+
+// /*/*/*/*/
+// match all letters and numbers with small /\w/
+let longHand = /[A-Za-z0-9_]+/;
+let shortHand = /\w+/;
+let numbers = "42";
+let varNames = "important_var";
+console.log(longHand.test(numbers));
+console.log(shortHand.test(numbers));
+console.log(longHand.test(varNames));
+console.log(shortHand.test(varNames));
+
+console.clear();
+
+let quoteSample123 = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g; // Change this line
+let result123 = quoteSample123.match(alphabetRegexV2).length;
+console.log(result123); //31
+
+//Match Everything But Letters and Numbers with cappital W /\W/
+console.clear();
+let shortHand2 = /\W/;
+let numbers2 = "42%";
+let sentence = "Coding!";
+console.log(numbers2.match(shortHand2));
+console.log(sentence.match(shortHand2));
