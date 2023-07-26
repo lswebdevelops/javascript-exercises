@@ -6,37 +6,30 @@ console.log(testRegex.test(testStr)); // true
 let testRegex2 = /code/;
 console.log(testRegex2.test(testStr)); // false
 
-
 let myString = "Hello, World!";
 let myRegex = /Hello/;
-let result = myRegex.test(myString); 
-console.log(result);//true;
-
+let result = myRegex.test(myString);
+console.log(result); //true;
 
 let testStr3 = "Hello, my name is Kevin.";
 let testRegex3 = /Kevin/;
 let result3 = testRegex3.test(testStr3);
-console.log(result3);//true
+console.log(result3); //true
 
 let wrongRegex = /kevin/;
-console.log(wrongRegex.test(testStr));// false
-
-
+console.log(wrongRegex.test(testStr)); // false
 
 let myCompleteName = "Davi";
 let myName = /Davi/;
-console.log(myName.test(myCompleteName));//true
+console.log(myName.test(myCompleteName)); //true
 
 let myWrongName = /Luciano/;
 console.log(myWrongName.test(myCompleteName)); // false
 
-
-
 let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
 let waldoRegex = /Waldo/; // Change this line
 let result4 = waldoRegex.test(waldoIsHiding);
-console.log(result4);//true
-
+console.log(result4); //true
 
 /*
 Your regex petRegex should return true for the string John has a pet dog.
@@ -51,17 +44,40 @@ Passed:Your regex petRegex should return false for the string Jimmy has a pet co
 let petString = "James has a pet cat.";
 let petRegex = /cat|dog|fish|bird/; // Change this line
 let result5 = petRegex.test(petString);
-console.log(result5);//true
-
+console.log(result5); //true
 
 // using ignore case
 let myString11 = "freeCodeCamp";
 let fccRegex = /freeCodeCamp|FreeCodeCamp|FreecodeCamp|FreeCodecamp/i; // Change this line
 let result11 = fccRegex.test(myString11);
-console.log(result11);// true
+console.log(result11); // true
 
-console.clear();
 // .match() method.
 
+"Hello, World!".match(/Hello/);
+let ourStr = "Regular expressions";
+let ourRegex = /expressions/;
+ourStr.match(ourRegex);
 
+
+console.log("string".match(/regex/)); // null
+console.log(/regex/.test("string")); //false
+
+console.log("string regex".match(/regex/)); // regex...
+console.log(/string/.test("string")); //true
+
+/*
+
+The result should have the string coding
+Passed:Your regex codingRegex should search for the string coding
+Passed:You should use the .match() method.
+
+*/
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; // Change this line
+let result12 = extractStr.match(codingRegex); // Change this line
+console.log(result12); //['coding', index: 18, input: "Extract the word 'coding' from this string.", groups: undefined]
+
+// Find More Than the First Match
+console.clear();
 
