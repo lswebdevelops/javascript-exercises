@@ -321,9 +321,9 @@ console.log(result4321);// 17
 
 //Restrict Possible Usernames
 
-console.clear();
+
 let username = "Oceans11";
-let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i; // Change this line
+let userCheck = /^[a-z][a-z]+\d*$|[a-z]+\d\d$/i; // Change this line
 // const userCheck = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i; also possible
 let result8797 = userCheck.test(username);
 console.log(result8797);
@@ -371,4 +371,25 @@ Fail: "J%4" - The string contains special characters (%), which are not allowed.
 So, the regular expression seems to be aiming to match strings that start with a lowercase letter, followed by a combination of lowercase letters and digits. However, it has some issues with certain conditions, as seen in the test results. Depending on the requirements, the regular expression may need adjustments.
 
 */
+
+// white spaces 
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g; // Change this line
+let result45645 = sample.match(countWhiteSpace);
+console.log(result45645);// (5) [' ', ' ', ' ', ' ', ' ']
+
+console.clear();
+
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let nonSpaceRegex = /\S/g;
+console.log(whiteSpace.match(nonSpaceRegex).length);// 32
+
+let whiteSpace2 = "1 2 345 67 890 "
+
+console.log(whiteSpace2.match(nonSpaceRegex).length);// 10
+
+
+
+
+
 
