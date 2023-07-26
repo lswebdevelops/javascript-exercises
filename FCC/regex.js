@@ -322,8 +322,9 @@ console.log(result4321);// 17
 //Restrict Possible Usernames
 
 console.clear();
-let username = "ghdfh555";
-let userCheck = /^[a-z][a-z]+\d*|^[a-z]\d\d+$/i; // Change this line
+let username = "Oceans11";
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i; // Change this line
+// const userCheck = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i; also possible
 let result8797 = userCheck.test(username);
 console.log(result8797);
 
@@ -340,3 +341,34 @@ console.log(result8797);
 // Failed:Your regex should not match the string c57bT3
 // Failed:Your regex should match the string AB1
 // Failed:Your regex should not match the string J%4
+/*
+In regular expressions, the * and $ are special characters that have specific meanings:
+
+(asterisk): This quantifier means "zero or more occurrences of the preceding character." In this context, the preceding character is \d, which represents any digit (0-9). So, \d* would match zero or more digits.
+$ (dollar sign): In regular expressions, this represents the end of a line or string. It is used to ensure that the pattern matches the entire string and not just a part of it.
+
+Now, let's break down the regular expression pattern in the code:
+
+javascript
+Copy code
+/^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i
+^[a-z][a-z]+\d*$: This part of the pattern matches strings that start with a lowercase letter (a-z) followed by one or more lowercase letters and then zero or more digits. The $ ensures that the digits occur at the end of the string.
+
+|: This is the OR operator in regular expressions, allowing either of the two patterns on either side of it to match.
+
+^[a-z]\d\d+$: This part of the pattern matches strings that start with a lowercase letter (a-z) followed by exactly two digits (0-9), and the $ ensures that there are no other characters after the digits.
+
+Let's go through the test cases to understand why they pass or fail:
+
+Pass: "Oceans11" - The string starts with a lowercase letter and is followed by lowercase letters and digits (1+ digits).
+Pass: "Jo" - The string starts with a lowercase letter and is followed by lowercase letters (2+ letters).
+Pass: "RegexGuru" - The string starts with a lowercase letter and is followed by lowercase letters (2+ letters).
+Fail: "JACK" - The string contains uppercase letters, which are not allowed.
+Fail: "J" - The string should have at least two lowercase letters or digits.
+Fail: "007" - The string contains only digits, and it should have at least one lowercase letter.
+Pass: "Z97" - The string starts with a lowercase letter and is followed by two digits.
+Fail: "J%4" - The string contains special characters (%), which are not allowed.
+So, the regular expression seems to be aiming to match strings that start with a lowercase letter, followed by a combination of lowercase letters and digits. However, it has some issues with certain conditions, as seen in the test results. Depending on the requirements, the regular expression may need adjustments.
+
+*/
+
