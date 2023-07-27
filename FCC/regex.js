@@ -261,16 +261,11 @@ console.log(storyRegex.test(theEnding)); //true
 let noEnding = "Sometimes a story will have to end";
 console.log(storyRegex.test(noEnding)); //false
 
-
-
 let caboose = "The last car on a train is the caboose";
 let lastRegex = / caboose$/; // Change this line
 let result343434 = lastRegex.test(caboose);
 
 console.log(result343434);
-
-
-
 
 // /*/*/*/*/
 // match all letters and numbers with small /\w/
@@ -283,7 +278,6 @@ console.log(shortHand.test(numbers));
 console.log(longHand.test(varNames));
 console.log(shortHand.test(varNames));
 
-
 let quoteSample123 = "The five boxing wizards jump quickly.";
 let alphabetRegexV2 = /\w/g; // Change this line
 let result123 = quoteSample123.match(alphabetRegexV2).length;
@@ -293,7 +287,7 @@ console.log(result123); //31
 let shortHand2 = /\W/;
 let numbers2 = "42%";
 let sentence = "Coding!";
-console.log(numbers2.match(shortHand2));// %
+console.log(numbers2.match(shortHand2)); // %
 console.log(sentence.match(shortHand2)); // !
 
 let quoteSample1234 = "The five boxing wizards jump quickly.";
@@ -303,24 +297,20 @@ console.log(result1234); // 6
 
 /////////////////////////////
 
-
-
 let movieName = "2001: A Space Odyssey";
 let numRegex = /\d/g; // Change this line
 let result321 = movieName.match(numRegex).length;
 console.log(result321); //4
 
-
 // Match All Non-Numbers with /\D/
 
-let movieName2= "2001: A Space Odyssey";
+let movieName2 = "2001: A Space Odyssey";
 let noNumRegex = /\D/g; // Change this line
 let result4321 = movieName2.match(noNumRegex).length;
 
-console.log(result4321);// 17
+console.log(result4321); // 17
 
 //Restrict Possible Usernames
-
 
 let username = "Oceans11";
 let userCheck = /^[a-z][a-z]+\d*$|[a-z]+\d\d$/i; // Change this line
@@ -328,7 +318,7 @@ let userCheck = /^[a-z][a-z]+\d*$|[a-z]+\d\d$/i; // Change this line
 let result8797 = userCheck.test(username);
 console.log(result8797);
 
-// Your regex should match the string JACK /// /\w+|\d+/g; 
+// Your regex should match the string JACK /// /\w+|\d+/g;
 // Failed:Your regex should not match the string J
 // Failed:Your regex should match the string Jo
 // Failed:Your regex should match the string Oceans11
@@ -372,24 +362,91 @@ So, the regular expression seems to be aiming to match strings that start with a
 
 */
 
-// white spaces 
+// white spaces
 let sample = "Whitespace is important in separating words";
 let countWhiteSpace = /\s/g; // Change this line
 let result45645 = sample.match(countWhiteSpace);
-console.log(result45645);// (5) [' ', ' ', ' ', ' ', ' ']
+console.log(result45645); // (5) [' ', ' ', ' ', ' ', ' ']
 
 console.clear();
 
-let whiteSpace = "Whitespace. Whitespace everywhere!"
+let whiteSpace = "Whitespace. Whitespace everywhere!";
 let nonSpaceRegex = /\S/g;
-console.log(whiteSpace.match(nonSpaceRegex).length);// 32
+console.log(whiteSpace.match(nonSpaceRegex).length); // 32
 
-let whiteSpace2 = "1 2 345 67 890 "
+let whiteSpace2 = "1 2 345 67 890 ";
 
-console.log(whiteSpace2.match(nonSpaceRegex).length);// 10
+console.log(whiteSpace2.match(nonSpaceRegex).length); // 10
+
+/*
++  > one or more, 
+* > zero or more, 
+{,} range
 
 
+*/
+console.clear();
 
+let A4 = "aaaah";
+let A2 = "aah";
+let multipleA = /a{3,5}h/; // > /a{2,5}h/ > both true;
+console.log(multipleA.test(A4)); // true
+console.log(multipleA.test(A2)); // false
 
+/*
+Your regex should use curly brackets.
+Passed:Your regex should not match the string Ohh no
+Passed:Your regex should match the string Ohhh no
+Passed:Your regex should match the string Ohhhh no
+Passed:Your regex should match the string Ohhhhh no
+Passed:Your regex should match the string Ohhhhhh no
+Passed:Your regex should not match the string Ohhhhhhh no
+*/
 
+let ohStr = "Ohhhhhh no";
+let ohRegex = /Oh{3,6} no/; // Change this line
+let result2323223 = ohRegex.test(ohStr);
+console.log(result2323223); // true
+
+let A04 = "haaaah";
+let A02 = "haah";
+let A0100 = "h" + "a".repeat(100) + "h";
+let multiple0A = /ha{3,}h/;
+console.log(multipleA.test(A04)); //true
+console.log(multipleA.test(A02)); //false
+console.log(multipleA.test(A0100)); //true
+
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; // Change this line
+let result2323e223 = haRegex.test(haStr);
+console.log(result2323e223); // true
+
+let A004 = "haaaah";
+let A003 = "haaah";
+let A00100 = "h" + "a".repeat(100) + "h";
+
+let multipleHA = /ha{3}h/;
+console.log(multipleHA.test(A004)); // false
+console.log(multipleHA.test(A003)); // true
+console.log(multipleHA.test(A00100)); // false
+
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // Change this line
+let resultO = timRegex.test(timStr);
+console.log(resultO); // true
+
+// *////////////////////
+// using ? to test if a character is there or not
+let american = "color";
+let british = "colour";
+let rainbowRegex = /colou?r/;
+console.log(rainbowRegex.test(american)); //true
+console.log(rainbowRegex.test(british)); //true
+
+console.clear();
+
+let favWord = "favorite";
+let favRegex = /favou?rite/; 
+let resultA = favRegex.test(favWord);
+console.log(resultA);
 
