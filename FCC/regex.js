@@ -494,7 +494,6 @@ let resultR = myRegexR.test(myStringR);
 console.log(resultR);
 
 // Reuse Patterns Using Capture Groups
-console.clear();
 
 let repeatStr33 = "row row row your boat";
 let repeatRegex33 = /(\w+) \1 \1 /;
@@ -507,3 +506,37 @@ let repeatNum55 = "101 101 102"; //false
 let reRegex =  /^(\d+) \1 \1$/; // Change this line
 let resultfg = reRegex.test(repeatNum); 
 console.log(resultfg);// true
+
+
+
+// Use Capture Groups to Search and Replace
+
+
+
+
+let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+console.log(wrongText.replace(silverRegex, "blue"));; // The sky is blue.
+
+
+let codeCampRegex = "Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
+
+console.log(codeCampRegex); // "Camp Code"
+
+let codeCamp = "114 115"
+let codeCampRegex2 = codeCamp.replace(/(\d+)\s(\d+)/, '$2 $1');
+console.log(codeCampRegex2);// 115 114
+
+console.clear();
+
+let codeCamp1 = "114 115 116"
+let codeCampRegex1 = codeCamp1.replace(/(\d+)\s(\d+)\s(\d+)/, '$3 $2 $1');
+console.log(codeCampRegex1);//116 115 114
+
+
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
+let replaceText = "$3 $2 $1"; // Change this line
+let resultTT = str.replace(fixRegex, replaceText);
+console.log(resultTT);
+
