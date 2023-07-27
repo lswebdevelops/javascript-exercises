@@ -443,33 +443,28 @@ let rainbowRegex = /colou?r/;
 console.log(rainbowRegex.test(american)); //true
 console.log(rainbowRegex.test(british)); //true
 
-
 let favWord = "favorite";
-let favRegex = /favou?rite/; 
+let favRegex = /favou?rite/;
 let resultA = favRegex.test(favWord);
 console.log(resultA);
 
 // *////////////////////
 let quit = "qu";
 let noquit = "qt";
-let quRegex= /q(?=u)/;
+let quRegex = /q(?=u)/;
 let qRegex = /q(?!u)/;
 console.log(quit.match(quRegex));
 console.log(noquit.match(qRegex));
 
-
-// A more practical use of lookaheads is to check two or more patterns in one string. 
+// A more practical use of lookaheads is to check two or more patterns in one string.
 //Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
-let password = "abc123" ;
+let password = "abc123";
 let checkPass = /(?=\w{3,6})(?=\D*\d)/;
-console.log(checkPass.test(password));;
+console.log(checkPass.test(password));
 
-console.clear();
-
-
-let sampleWord = "ban012";// at least 6 {6}
+let sampleWord = "ban012"; // at least 6 {6}
 let sampleWord2 = "abc123"; // has six word characters and two digits after non-digits
-let sampleWord3 = "1a2bc5de"; // not pass //(\w{6}) is not satisfied as there are only five word characters ahead 
+let sampleWord3 = "1a2bc5de"; // not pass //(\w{6}) is not satisfied as there are only five word characters ahead
 let sampleWord4 = "astr1on11aut"; //  The positive lookaheads are both satisfied because there are six word characters ahead ("astr1o") and two digits after non-digits ("str1on11"). It matches and returns true.
 
 let pwRegex = /(?=\w{6})(?=\D+\d{2})/; // Change this line
@@ -479,5 +474,23 @@ console.log(pwRegex.test(sampleWord2)); // true
 console.log(pwRegex.test(sampleWord3)); // false
 console.log(pwRegex.test(sampleWord4)); // true
 
+// /**********
+// Check For Mixed Grouping of Characters
 
+let testStr888 = "Pumpkin";
+let testRegex888 = /P(engu|umpk)in/;
+console.log(testRegex888.test(testStr888)); //true
+
+let myString1 = "nice";
+let myString2 = "fine";
+let testRegex12 = /(n|f)i(n|c)e/;
+
+console.log(testRegex12.test(myString1));
+console.log(testRegex12.test(myString2));
+console.clear();
+
+let myStringR = "Franklin D. Roosevelt";
+let myRegexR = /(Franklin D. |Eleanor )Roosevelt/; // Change this line
+let resultR = myRegexR.test(myStringR);
+console.log(resultR);
 
