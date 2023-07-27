@@ -450,7 +450,6 @@ let resultA = favRegex.test(favWord);
 console.log(resultA);
 
 // *////////////////////
-console.clear();
 let quit = "qu";
 let noquit = "qt";
 let quRegex= /q(?=u)/;
@@ -464,3 +463,21 @@ console.log(noquit.match(qRegex));
 let password = "abc123" ;
 let checkPass = /(?=\w{3,6})(?=\D*\d)/;
 console.log(checkPass.test(password));;
+
+console.clear();
+
+
+let sampleWord = "ban012";// at least 6 {6}
+let sampleWord2 = "abc123"; // has six word characters and two digits after non-digits
+let sampleWord3 = "1a2bc5de"; // not pass //(\w{6}) is not satisfied as there are only five word characters ahead 
+let sampleWord4 = "astr1on11aut"; //  The positive lookaheads are both satisfied because there are six word characters ahead ("astr1o") and two digits after non-digits ("str1on11"). It matches and returns true.
+
+let pwRegex = /(?=\w{6})(?=\D+\d{2})/; // Change this line
+
+console.log(pwRegex.test(sampleWord)); // true
+console.log(pwRegex.test(sampleWord2)); // true
+console.log(pwRegex.test(sampleWord3)); // false
+console.log(pwRegex.test(sampleWord4)); // true
+
+
+
