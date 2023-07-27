@@ -186,7 +186,7 @@ console.log(jennyStr.match(myRegex44)); // (12) ['J', 'e', 'n', 'n', 'y', '8', 
 // Your regex myRegex should match 17 items.
 // Passed:Your regex myRegex should use the global flag.
 // Passed:Your regex myRegex should use the case insensitive flag.
-console.clear();
+
 
 let quoteSample444 = "Blueberry 3.141592653s are delicious.";
 let myRegex444 = /[h-s2-6]/gi; // Change this line
@@ -368,7 +368,7 @@ let countWhiteSpace = /\s/g; // Change this line
 let result45645 = sample.match(countWhiteSpace);
 console.log(result45645); // (5) [' ', ' ', ' ', ' ', ' ']
 
-console.clear();
+
 
 let whiteSpace = "Whitespace. Whitespace everywhere!";
 let nonSpaceRegex = /\S/g;
@@ -385,7 +385,7 @@ console.log(whiteSpace2.match(nonSpaceRegex).length); // 10
 // using ? to test if a character is there or not
 
 */
-console.clear();
+
 
 let A4 = "aaaah";
 let A2 = "aah";
@@ -527,8 +527,6 @@ let codeCamp = "114 115"
 let codeCampRegex2 = codeCamp.replace(/(\d+)\s(\d+)/, '$2 $1');
 console.log(codeCampRegex2);// 115 114
 
-console.clear();
-
 let codeCamp1 = "114 115 116"
 let codeCampRegex1 = codeCamp1.replace(/(\d+)\s(\d+)\s(\d+)/, '$3 $2 $1');
 console.log(codeCampRegex1);//116 115 114
@@ -540,3 +538,13 @@ let replaceText = "$3 $2 $1"; // Change this line
 let resultTT = str.replace(fixRegex, replaceText);
 console.log(resultTT);
 
+
+
+console.clear();
+// Remove Whitespace from Start and End
+
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; // Change this line
+
+let resultFF = hello.replace(wsRegex, ""); // Change this line
+console.log(resultFF);
