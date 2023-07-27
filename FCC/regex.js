@@ -487,10 +487,23 @@ let testRegex12 = /(n|f)i(n|c)e/;
 
 console.log(testRegex12.test(myString1));
 console.log(testRegex12.test(myString2));
-console.clear();
 
 let myStringR = "Franklin D. Roosevelt";
 let myRegexR = /(Franklin D. |Eleanor )Roosevelt/; // Change this line
 let resultR = myRegexR.test(myStringR);
 console.log(resultR);
 
+// Reuse Patterns Using Capture Groups
+console.clear();
+
+let repeatStr33 = "row row row your boat";
+let repeatRegex33 = /(\w+) \1 \1 /;
+console.log(repeatRegex33.test(repeatStr33));; // true
+console.log(repeatStr33.match(repeatRegex33));; // ["row row row", "row"]
+
+let repeatNum = "101 101 101"; //true
+let repeatNum55 = "101 101 102"; //false
+
+let reRegex =  /^(\d+) \1 \1$/; // Change this line
+let resultfg = reRegex.test(repeatNum); 
+console.log(resultfg);// true
