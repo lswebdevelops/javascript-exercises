@@ -382,7 +382,7 @@ console.log(whiteSpace2.match(nonSpaceRegex).length); // 10
 +  > one or more, 
 * > zero or more, 
 {,} range
-
+// using ? to test if a character is there or not
 
 */
 console.clear();
@@ -443,10 +443,24 @@ let rainbowRegex = /colou?r/;
 console.log(rainbowRegex.test(american)); //true
 console.log(rainbowRegex.test(british)); //true
 
-console.clear();
 
 let favWord = "favorite";
 let favRegex = /favou?rite/; 
 let resultA = favRegex.test(favWord);
 console.log(resultA);
 
+// *////////////////////
+console.clear();
+let quit = "qu";
+let noquit = "qt";
+let quRegex= /q(?=u)/;
+let qRegex = /q(?!u)/;
+console.log(quit.match(quRegex));
+console.log(noquit.match(qRegex));
+
+
+// A more practical use of lookaheads is to check two or more patterns in one string. 
+//Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
+let password = "abc123" ;
+let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+console.log(checkPass.test(password));;
